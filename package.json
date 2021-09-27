@@ -1,0 +1,17 @@
+{
+  "name": "natures",
+  "version": "1.0.0",
+  "description": "First project for advanced css",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "logesh",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
