@@ -11,3 +11,54 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
+/*Media Query Manager
+
+till 600px=Phone
+600-900=Tablet potrait
+900-1200 landscape
+1200-1800 normal styles
+anything above 1800 corresponds to very big ultrawide monitors
+*/
+@mixin respond-phone{
+    @media (max-width:600px){
+        // @content allows to pass a bloc of code in mixin
+        @content
+    }
+}
+/*
+$breakpoint argument choices
+-phone
+-tab-port
+-tab-land
+-big-desktop
+1em=Default font-size
+*/
+
+
+@mixin respond($breakpoint){
+    @if$breakpoint==phone {
+        @media (max-width:37.5em){
+            //600px
+            
+            @content
+        }
+    }
+    @if$breakpoint==tab-port {
+        @media (max-width:56.25em){//900px
+            
+            @content
+        }
+    }
+    @if$breakpoint==tab-land {
+        @media (max-width:75em){
+            // @content allows to pass a bloc of code in mixin
+            @content
+        }
+    }
+    @if$breakpoint==big-desktop {
+        @media (min-width:112.5em){//1800px
+            
+            @content
+        }
+    }
+}
